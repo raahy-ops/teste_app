@@ -1,0 +1,13 @@
+import { Router } from "express";
+
+const router = Router();
+
+// rotas para tarefas, metodo CRUD 
+router.get("/", () => console.log('pegar todas as tarefas'))
+router.get("/:id", () => console.log('pegar uma tarefa'))
+router.post("/", () => console.log('cadastrar uma tarefa'))
+router.put("/:id", () => console.log('atualizar uma tarefa'))
+router.delete("/:id", () => console.log('deletar uma tarefa'))
+
+
+export default router;
