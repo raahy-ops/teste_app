@@ -1,13 +1,15 @@
 import { Router } from "express";
+import tarefaController from "../controllers/tarefaController";
 
 const router = Router();
 
 // rotas para tarefas, metodo CRUD 
-router.get("/", () => console.log('pegar todas as tarefas'))
-router.get("/:id", () => console.log('pegar uma tarefa'))
-router.post("/", () => console.log('cadastrar uma tarefa'))
-router.put("/:id", () => console.log('atualizar uma tarefa'))
-router.delete("/:id", () => console.log('deletar uma tarefa'))
+
+router.get("/", tarefaController.getTarefas)
+router.get("/:id", tarefaController.getTarefa)
+router.post("/", tarefaController.criarTarefa)
+router.put("/:id", tarefaController.atualizarTarefa)
+router.delete("/:id", tarefaController.deletarTarefa)
 
 
 export default router;
