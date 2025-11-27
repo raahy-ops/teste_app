@@ -1,5 +1,5 @@
 //Representação de uma tarefa
-class Tarefa{
+export default class Tarefa{
 
   id: number;
   nome: string;
@@ -14,6 +14,5 @@ class Tarefa{
     this.descricao = descricao;
     
   }
-
 
 }
