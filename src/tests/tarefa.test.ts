@@ -6,7 +6,7 @@ test("GET: /tarefas = 200", async()=>{
 
     const body = await res.json()
     expect(Array.isArray(body)).toBe(true)
-})
+  })
 
 
 
