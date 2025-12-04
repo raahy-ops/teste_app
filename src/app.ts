@@ -1,10 +1,11 @@
 import express from "express";
 import { Request, Response, NextFunction } from "express"; // corpo da requisição
-import rotaTarefa from "./routes/tarefaRouter"; //rota para chamar
+import handlerRouter from "./routes/router" //rota para chamar
 
-const app = express(); // criando o app
+const app = express();  // criando o app
 app.use(express.json()); // permisão 
-app.use("/tarefas", rotaTarefa) // cair nesta rota 
+
+app.use(handlerRouter); // cair nesta rota
 
 
 
