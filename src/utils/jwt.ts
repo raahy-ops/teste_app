@@ -1,18 +1,25 @@
 import jwt from "jsonwebtoken"
+import dotenv from "dotenv"
+dotenv.config()
 
-// ------------- TESTE DE TOKEN ----------- 
+const JWT_SECRET = process.env.JWT_SECRET!
+const DURATION = 60 * 60 * 24
 
-const JWT_SECRET = "senha_secret"
-const DURATION = 60 * 60 * 24 
-
-export function createJWT(){
-  const payload = {
-    id: 123,
-    nome: "fulano",
-    cargo: "cliente"
-  }
-  return jwt.sign(payload, JWT_SECRET, {
-    expiresIn: DURATION,
-    algorithm: "HS256"
-  })
+// função para gerar o token
+export function createJWT(payload:object){
+    return jwt.sign(payload, JWT_SECRET, {
+        expiresIn: DURATION,
+        algorithm: "HS256"
+    })
 }
+
+export function verifyJWT(token:string){
+    return jwt.verify(token, JWT_SECRET, function(err:any, decoded){
+        if (err){
+            return undefined
+        }
+        return decoded
+        
+    })
+}
+

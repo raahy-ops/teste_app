@@ -1,22 +1,10 @@
 import express from "express";
-import { Request, Response, NextFunction } from "express"; // corpo da requisição
-import handlerRouter from "./routes/router" //rota para chamar
+import { Request, Response, NextFunction } from "express";
+import handlerRouter from "./routes/router";
 
-const app = express();  // criando o app
-app.use(express.json()); // permisão 
+const app = express();
+app.use(express.json());
 
-app.use(handlerRouter); // cair nesta rota
-
-
-
-
-
-
-
-// Rota Genérica, Vai pegar qualquer coisa que vir, irá processar o user
+app.use(handlerRouter);
 
 export default app;
-
-// controller - valida e direciona para Models
-// Model - representação dos objetos
-// repositories - representação no fim de tudo da DAO
