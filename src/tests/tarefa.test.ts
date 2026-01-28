@@ -22,7 +22,7 @@ test("GET: /tarefas = 200", async()=>{
 })
 
 test("POST: /tarefas = 201(Criar tarefa)", async()=>{
-    const res = await fetch(URL_BASE, {
+        const res = await fetch(URL_BASE, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(nova_tarefa)
