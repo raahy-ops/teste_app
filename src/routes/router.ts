@@ -13,7 +13,7 @@ handlerRouter.use("/api/login",rotaLogin);
 handlerRouter.use("/jwt", (req, res)=>{
     const payload = {
         id: 123,
-        nome: "fulano",
+        nome: "Senhor_fulano",
         cargo: "cliente"
     }
     res.json(createJWT(payload))

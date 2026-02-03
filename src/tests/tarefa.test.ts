@@ -1,5 +1,5 @@
 
-const URL_BASE:string = "http://localhost:3000/tarefas"
+const URL_BASE:string = "http://localhost:3001/tarefas"
 
 let tarefa_id: number = 0
 const nova_tarefa = {
