@@ -1,9 +1,9 @@
 import { Router } from "express";
-import ClienteController from "../controllers/ClienteController";
+import clienteController from "../controllers/ClienteController";
  
-const rotaCliente = Router();
+const rotaClient = Router();
  
-rotaCliente.post("/", ClienteController.CadastrarLogin);
+rotaClient.post("/", clienteController.Criarcliente);
  
  
-export default rotaCliente;
+export default rotaLogin;
