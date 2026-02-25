@@ -8,12 +8,12 @@ export type Quartos = RowDataPacket &{
     qnt_cama_casal:number;
     qnt_cama_solteiro:number;
     preco:number;
-    disponivel:boolean;
+    disponivel: number;
 }
 
 export type QuartoReserva = {
-    inicio:string 
-    fim:string
+    inicio: string 
+    fim: string
     quantidade: string
 }
 

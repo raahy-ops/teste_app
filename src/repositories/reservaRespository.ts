@@ -1,5 +1,4 @@
 import { pool } from "../database/database";
-import { Reservas } from "../models/reserva"
 import { ResultSetHeader, RowDataPacket } from "mysql2";
 
 
@@ -20,7 +19,23 @@ async function fazerPedido(data:any){
    
 }
 
-async function fazerReserva(idPedido:number, quartos:object){
+async function fazerReserva(idPedido:number, quarto:any) {
+    const sql = `INSERT INTO reservas (pedido_id, quarto_id, inicio, fim) 
+    VALUES (?, ?, ?, ?)`
+
+    try {
+        const [result] = await pool.query<ResultSetHeader>(sql, [
+            idPedido,
+            quarto.id,
+            quarto.dataInicio,
+            quarto.dataFim,
+        ]);
+        // apenas retorna o ID do novo pedido
+        return result.insertId;
+    } catch (err) {
+        console.error('Erro ao reservar o quarto:', err);
+        return null;
+    }
     
 }
 
