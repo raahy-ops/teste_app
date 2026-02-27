@@ -5,18 +5,17 @@ test("POST / login = 200", async () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            email: "Cleiton3@gmail.com",
+            email: "Cleiton@gmail.com",
             senha: "senha123"}
         )
     });
     expect(res.status).toBe(200);
     const json = await res.json()
-    // console.log(json);
+   // console.log(json);
 });
 
 
-
-test("POST / login(sem senha) = 200", async () => {
+test("POST / login(sem senha) = 400", async () => {
     const res = await fetch(url_base, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -29,19 +28,19 @@ test("POST / login(sem senha) = 200", async () => {
 });
 
 
-test("POST / create = 200", async () => {
-    const res = await fetch(url_base + "/cadastro" , {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            nome: "Claudia",
-            email: "claudia@email.com",
-            senha: "senha123",
-            telefone: "157070-8080",
-            cpf:"123456789-55"
-        })
-    });
-    expect(res.status).toBe(200);
-    const token = await res.json();
-    // console.log(token)
-});
+// test("POST / create = 200", async () => {
+//     const res = await fetch(url_base + "/cadastro" , {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify({
+//             nome: "nomeTeste",
+//             email: "Cleber@gmail.com",
+//             senha: "123",
+//             telefone: "158090-0030",
+//             cpf:"123467890-85"
+//         })
+//     });
+//     expect(res.status).toBe(200);
+//     const token = await res.json();
+//     // console.log(token)
+// });

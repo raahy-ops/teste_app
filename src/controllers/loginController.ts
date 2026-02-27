@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import loginRepository from "../repositories/loginRepository";  
-import { validarSenha } from "../utils/senha";
+import { validarSenha,  gerarSenha} from "../utils/senha";
 import { createJWT } from "../utils/jwt";
-import { gerarSenha } from "../utils/senha";
+
 
 
 
@@ -33,7 +33,7 @@ async function CriarLogin(req:Request, res:Response, next:NextFunction){
     // CRIAR TOKEN DE USUARIO
 
     const token = createJWT(usuario)
-    return res.status(201).json(token);
+    return res.status(200).json(token);
   
 
   } catch (error) {
