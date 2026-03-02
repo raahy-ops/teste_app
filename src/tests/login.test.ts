@@ -7,6 +7,7 @@ test("POST / login = 200", async () => {
         body: JSON.stringify({
             email: "Cleiton@gmail.com",
             senha: "senha123"}
+            
         )
     });
     expect(res.status).toBe(200);

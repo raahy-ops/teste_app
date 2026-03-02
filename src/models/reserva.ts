@@ -5,6 +5,6 @@ export type Reserva =RowDataPacket &{
     pedido_id: number;
     quarto_id: number;
     adicional_id: number;
-    fim: Date;
     inicio: Date;
+    fim: Date;
 }

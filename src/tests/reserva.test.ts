@@ -4,17 +4,17 @@ test("POST: /api/reserva = 200", async()=>{
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            email: "Rayssa@gmail.com",
+            email: "Cleber@gmail.com",
             senha: "123"}
         )
     });
     expect(res.status).toBe(200);
     const token = await res.json()
-
+ 
     //realizar reserva
     const resp = await fetch("http://localhost:3000/api/reserva",{
         method: "POST",
-        headers: { 
+        headers: {
             "Content-Type": "application/json",
             "Authorization": "Bearer "+token
         },
@@ -23,18 +23,18 @@ test("POST: /api/reserva = 200", async()=>{
             quartos: [
                 {
                     id: 20,
-                    inicio: "2026/02/19",
-                    fim: "2026/02/20",
+                    dataInicio: "2026/01/03",
+                    dataFim: "2026/01/05",
                 },
                 {
                     id: 21,
-                    inicio: "2026/02/19",
-                    fim: "2026/02/20",
+                    dataInicio: "2026/04/02",
+                    dataFim: "2026/04/05",
                 }
-
+ 
             ]
         })
-
+ 
     });
     expect(resp.status).toBe(200);
     const json = await resp.json()
