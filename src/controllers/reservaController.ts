@@ -24,8 +24,8 @@ async function criarPedido(req:Request, res:Response, next:NextFunction) {
         //criar a reserva para cada um dos quartos
         let result = []
         for (let q of quartos){
-            q.inicio = await corrigirDataHora(q.dataInicio, 14)
-            q.fim = await corrigirDataHora(q.dataFim, 12)
+            q.dataInicio = await corrigirDataHora(q.dataInicio, 14)
+            q.dataFim = await corrigirDataHora(q.dataFim, 12)
             const reservaID = await reservaRespository.fazerReserva(pedidoID, q)
             if (!reservaID){continue}
             result.push({
