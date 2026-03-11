@@ -14,8 +14,8 @@ async function disponiveis(pedido:QuartoReserva):Promise<Quartos[]|null>{
  
     const [quartos] = await pool.query<Quartos[]>(sql, [
         pedido.quantidade,
-        pedido.dataInicio,
-        pedido.dataFim,
+        pedido.inicio,
+        pedido.fim,
     ])
     return quartos.length ? quartos : null
 }
