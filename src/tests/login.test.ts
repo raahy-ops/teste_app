@@ -1,4 +1,4 @@
-const url_base:string = "http://localhost:3000/api/login";
+const url_base :string = "https://app-hotel-delta.vercel.app/api/login";
  
 test("POST / login = 200", async () => {
     const res = await fetch(url_base, {
@@ -9,39 +9,40 @@ test("POST / login = 200", async () => {
             senha: "senha123"}
             
         )
-    });
-    expect(res.status).toBe(200);
+    }); 
     const json = await res.json()
-   // console.log(json);
+   console.log(json);
+    expect(res.status).toBe(200);
+   
 });
 
 
-test("POST / login(sem senha) = 400", async () => {
-    const res = await fetch(url_base, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            email: "teste@email.com",
-            senha: ""}
-        )
-    });
-    expect(res.status).toBe(400);
-});
-
-
-// test("POST / create = 200", async () => {
-//     const res = await fetch(url_base + "/cadastro" , {
+// test("POST / login(sem senha) = 400", async () => {
+//     const res = await fetch(url_base, {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify({
-//             nome: "nomeTeste",
-//             email: "Cleber@gmail.com",
-//             senha: "123",
-//             telefone: "158090-0030",
-//             cpf:"123467890-85"
-//         })
+//             email: "teste@email.com",
+//             senha: ""}
+//         )
 //     });
+//     expect(res.status).toBe(400);
+// });
+
+
+// test("POST / create = 200", async () => {
+//    const res = await fetch(url_base + "/cadastro" , {
+//        method: "POST",
+//        headers: { "Content-Type": "application/json" },
+//        body: JSON.stringify({
+//            nome: "Yasmin",
+//            email: "Yasmin@email.com",
+//            senha: "123",
+//            telefone: "157070-7070",
+//            cpf:"123456789-55"
+//        })
+//    });
 //     expect(res.status).toBe(200);
 //     const token = await res.json();
-//     // console.log(token)
+//     console.log(token)
 // });
