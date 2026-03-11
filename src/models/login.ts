@@ -5,7 +5,7 @@ export type Login = RowDataPacket &{
     nome:string;
     email:string;
     senha:string;
-    cargo:string;
+    cargo_id:string;
 }
 
 export type dadosLogin = {
