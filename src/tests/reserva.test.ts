@@ -23,13 +23,13 @@ test("POST: /api/reserva = 200", async()=>{
             quartos: [
                 {
                     id: 20,
-                    dataInicio: "2026/01/03",
-                    dataFim: "2026/01/05",
+                    inicio: "2026/01/03",
+                    fim: "2026/01/05",
                 },
                 {
                     id: 21,
-                    dataInicio: "2026/04/02",
-                    dataFim: "2026/04/05",
+                    inicio: "2026/04/02",
+                    fim: "2026/04/05",
                 }
  
             ]
@@ -38,5 +38,5 @@ test("POST: /api/reserva = 200", async()=>{
     });
     expect(resp.status).toBe(200);
     const json = await resp.json()
-    // console.log(json)
+    console.log(json)
 })

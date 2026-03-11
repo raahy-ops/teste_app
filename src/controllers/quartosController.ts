@@ -5,15 +5,15 @@ import { corrigirDataHora } from "../utils/datahora";
 
 
 async function disponiveis(req:Request, res:Response, next:NextFunction) {
-    let {dataInicio, dataFim, quantidade} = req.body;
+    let {inicio, fim, quantidade} = req.body;
  
-    if (!dataInicio || !dataFim || !quantidade){
+    if (!inicio || !fim || !quantidade){
         return res.status(400).json({erro:"Preencha os campos para consulta"})
     }
  
-    dataInicio = await corrigirDataHora(dataInicio, 14)
-    dataFim = await corrigirDataHora(dataFim, 12)
-    const dados = {dataInicio, dataFim, quantidade}
+    inicio = await corrigirDataHora(inicio, 14)
+    fim = await corrigirDataHora(fim, 12)
+    const dados = {inicio, fim, quantidade}
     try {
         // buscar quartos diponiveis na data
         let quartos = await quartosRepository.disponiveis(dados)

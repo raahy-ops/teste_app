@@ -4,12 +4,12 @@ test("POST: /api/quartosDisponiveis = 200", async()=>{
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            dataInicio:"2026/02/19",
-            dataFim:"2026/02/20",
+            inicio:"2026/05/30",
+            fim:"2026/06/01",
             quantidade:1
         })
     });
     expect(resp.status).toBe(200);
     const json = await resp.json()
-    // console.log(json)
+    console.log(json)
 })

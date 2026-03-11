@@ -35,11 +35,11 @@ test("POST / create = 200", async () => {
        method: "POST",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify({
-           nome: "Yasmin",
-           email: "Yasmin@email.com",
+           nome: "Yasmin1",
+           email: "Yasmin1@email.com",
            senha: "123",
-           telefone: "157070-7071",
-           cpf:"123456789-56"
+           telefone: "157070-7072",
+           cpf:"123456789-59"
        })
    });
     expect(res.status).toBe(200);
