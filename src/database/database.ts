@@ -1,10 +1,9 @@
 import mysql from "mysql2/promise"
 import dotenv from "dotenv"
 
-dotenv.config()
+dotenv.config();
 
 export const pool = mysql.createPool({
-    
     host: process.env.DB_HOST,
     port: Number(process.env.DB_PORT),
     database: process.env.DB_NAME,
@@ -18,27 +17,12 @@ export const pool = mysql.createPool({
 
 function getSSLValues(){
     if(process.env.DB_CA){
-        return{
+        return {
             ca: process.env.DB_CA,
             rejectUnauthorized: true
         };
     }
-     return process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : undefined;
-
+    return process.env.NODE_ENV === "production" 
+        ? {rejectUnauthorized: false} 
+        : undefined
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
